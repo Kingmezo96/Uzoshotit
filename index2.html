@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="style/type/icons.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="style/css/color/lavender.css">
+  <link rel="stylesheet" type="text/css" href="style/css/uzo-dark.css">
   <style>
     .navbar.wide.bg-dark {
       padding-top: 8px;
@@ -30,7 +31,7 @@
     }
 
     .navbar-brand img {
-      width: 118px;
+      width: 112px;
       height: auto;
       background: transparent;
     }
@@ -100,21 +101,17 @@
     .cbp-image-wrapper {
       position: relative;
       overflow: hidden;
+      aspect-ratio: 16 / 6;
+      min-height: 0 !important;
       background: #111 !important;
     }
 
     .cbp-image-wrapper:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: rgba(0, 0, 0, .38);
-      pointer-events: none;
+      display: none;
     }
 
     .cbp-image-wrapper .container {
-      position: relative;
-      z-index: 2;
+      display: none !important;
     }
 
     .uzo-tile-video {
@@ -133,20 +130,22 @@
     }
   </style>
 </head>
-<body>
+<body class="uzo-dark">
   <div class="content-wrapper">
     <nav class="navbar wide bg-dark inverse-text navbar-expand-lg">
       <div class="container-fluid flex-row justify-content-center">
         <div class="navbar-header">
-          <div class="navbar-brand"><a href="index.html"><img src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" /></a></div>
+          <div class="navbar-brand"><a href="index2.html"><img src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" /></a></div>
           <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
         </div>
         <!-- /.navbar-header -->
         <div class="navbar-collapse collapse justify-content-between align-items-center">
           <ul class="uzo-header-nav">
-            <li><a href="#cube-inline">Gallery</a></li>
+            <li><a class="active" href="index2.html#cube-inline">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="#academy">Academy</a></li>
+            <li><a href="academy.html">Academy</a></li>
             <li><a class="book-link" href="contact.html">Book Now</a></li>
           </ul>
           <ul class="navbar-nav plain mx-auto text-center" aria-hidden="true">
@@ -478,7 +477,7 @@
         <!--/.social-wrapper -->
       </div>
     </nav>
-    <div class="wrapper light-wrapper">
+    <div class="wrapper dark-wrapper inverse-text">
       <div id="cube-inline" class="cbp cbp-images cube-inline-4">
         <div class="cbp-item text-center family">
           <div class="wrapper image-wrapper cbp-image-wrapper inverse-text" data-video-panel="1">
@@ -674,8 +673,9 @@
           return;
         }
 
+        var shouldUseHq = window.matchMedia("(min-width: 992px)").matches;
         var source = document.createElement("source");
-        source.src = video.dataset.src;
+        source.src = shouldUseHq ? video.dataset.srcHq : video.dataset.src;
         source.type = "video/mp4";
         video.appendChild(source);
         video.dataset.loaded = "true";
@@ -686,6 +686,7 @@
         var panelNumber = Number(panel.dataset.videoPanel || index + 1);
         var tileNumber = twoDigits(panelNumber);
         var videoSrc = "style/media/tiles/uzo-tile-" + tileNumber + ".mp4";
+        var videoHqSrc = "style/media/tiles-hq/uzo-tile-" + tileNumber + ".mp4";
         var posterSrc = "style/media/posters/uzo-tile-" + tileNumber + "-poster.jpg";
         panel.removeAttribute("data-image-src");
         panel.style.backgroundImage = "url('" + posterSrc + "')";
@@ -702,6 +703,7 @@
         video.poster = posterSrc;
         video.setAttribute("aria-hidden", "true");
         video.dataset.src = videoSrc;
+        video.dataset.srcHq = videoHqSrc;
 
         video.addEventListener("canplay", function () {
           panel.classList.add("is-video-loaded");

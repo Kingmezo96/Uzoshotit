@@ -124,6 +124,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0;
+      transition: opacity .45s ease;
+    }
+
+    .cbp-image-wrapper.is-video-loaded .uzo-tile-video {
+      opacity: 1;
     }
   </style>
 </head>
@@ -656,60 +662,85 @@
   <script src="style/js/scripts.js"></script>
   <script>
     (function () {
-      var videoSrc = "style/media/uzo-home.mp4";
-      var framesBetweenPanels = 120;
-      var featuredPanelSpacingFrames = 60;
-      var featuredPanelOffsets = {
-        2: 0,
-        4: featuredPanelSpacingFrames,
-        6: featuredPanelSpacingFrames * 2
-      };
-      var framesPerSecond = 30;
-      var knownDuration = 23.9666666667;
       var panels = document.querySelectorAll(".cbp-image-wrapper");
+      var hasObserver = "IntersectionObserver" in window;
+
+      function twoDigits(number) {
+        return String(number).padStart(2, "0");
+      }
+
+      function loadVideo(video) {
+        if (video.dataset.loaded === "true") {
+          return;
+        }
+
+        var source = document.createElement("source");
+        source.src = video.dataset.src;
+        source.type = "video/mp4";
+        video.appendChild(source);
+        video.dataset.loaded = "true";
+        video.load();
+      }
 
       panels.forEach(function (panel, index) {
         var panelNumber = Number(panel.dataset.videoPanel || index + 1);
-        var frameOffset = featuredPanelOffsets[panelNumber];
-
-        if (frameOffset === undefined) {
-          frameOffset = index * framesBetweenPanels;
-        }
-
+        var tileNumber = twoDigits(panelNumber);
+        var videoSrc = "style/media/tiles/uzo-tile-" + tileNumber + ".mp4";
+        var posterSrc = "style/media/posters/uzo-tile-" + tileNumber + "-poster.jpg";
         panel.removeAttribute("data-image-src");
+        panel.style.backgroundImage = "url('" + posterSrc + "')";
+        panel.style.backgroundSize = "cover";
+        panel.style.backgroundPosition = "center";
 
         var video = document.createElement("video");
-        var source = document.createElement("source");
-        var offset = (frameOffset / framesPerSecond) % knownDuration;
 
         video.className = "uzo-tile-video";
-        video.autoplay = true;
         video.muted = true;
         video.playsInline = true;
-        video.preload = "auto";
+        video.loop = true;
+        video.preload = "none";
+        video.poster = posterSrc;
         video.setAttribute("aria-hidden", "true");
-        video.dataset.frameOffset = String(frameOffset);
+        video.dataset.src = videoSrc;
 
-        source.src = videoSrc;
-        source.type = "video/mp4";
-        video.appendChild(source);
-
-        video.addEventListener("loadedmetadata", function () {
-          var duration = video.duration || knownDuration;
-          var safeDuration = Math.max(duration - .25, .25);
-          var startAt = offset % safeDuration;
-
-          video.currentTime = startAt;
+        video.addEventListener("canplay", function () {
+          panel.classList.add("is-video-loaded");
           video.play().catch(function () {});
-
-          video.addEventListener("ended", function () {
-            video.currentTime = startAt;
-            video.play().catch(function () {});
-          });
         });
 
         panel.insertBefore(video, panel.firstChild);
+
+        if (!hasObserver) {
+          loadVideo(video);
+          video.play().catch(function () {});
+        }
       });
+
+      if (hasObserver) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            var video = entry.target.querySelector(".uzo-tile-video");
+
+            if (!video) {
+              return;
+            }
+
+            if (entry.isIntersecting) {
+              loadVideo(video);
+              video.play().catch(function () {});
+            } else {
+              video.pause();
+            }
+          });
+        }, {
+          rootMargin: "200px 0px",
+          threshold: .15
+        });
+
+        panels.forEach(function (panel) {
+          observer.observe(panel);
+        });
+      }
     }());
   </script>
 </body>

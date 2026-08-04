@@ -673,9 +673,8 @@
           return;
         }
 
-        var shouldUseHq = window.matchMedia("(min-width: 992px)").matches;
         var source = document.createElement("source");
-        source.src = shouldUseHq ? video.dataset.srcHq : video.dataset.src;
+        source.src = video.dataset.src;
         source.type = "video/mp4";
         video.appendChild(source);
         video.dataset.loaded = "true";
@@ -686,7 +685,6 @@
         var panelNumber = Number(panel.dataset.videoPanel || index + 1);
         var tileNumber = twoDigits(panelNumber);
         var videoSrc = "style/media/tiles/uzo-tile-" + tileNumber + ".mp4";
-        var videoHqSrc = "style/media/tiles-hq/uzo-tile-" + tileNumber + ".mp4";
         var posterSrc = "style/media/posters/uzo-tile-" + tileNumber + "-poster.jpg";
         panel.removeAttribute("data-image-src");
         panel.style.backgroundImage = "url('" + posterSrc + "')";
@@ -703,7 +701,6 @@
         video.poster = posterSrc;
         video.setAttribute("aria-hidden", "true");
         video.dataset.src = videoSrc;
-        video.dataset.srcHq = videoHqSrc;
 
         video.addEventListener("canplay", function () {
           panel.classList.add("is-video-loaded");

@@ -59,11 +59,16 @@ body.uzo-dark {
 .uzo-dark .navbar-brand {
   padding: 0;
   line-height: 0;
+  flex: 0 0 auto;
 }
 
 .uzo-dark .navbar-brand img {
-  width: 112px;
+  display: block;
+  width: clamp(72px, 9vw, 112px);
+  max-width: 100%;
   height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   background: transparent;
 }
 
@@ -274,8 +279,12 @@ body.uzo-dark {
 }
 
 .uzo-footer-logo {
-  width: 140px;
+  display: inline-block;
+  width: clamp(90px, 12vw, 140px);
+  max-width: 100%;
   height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   background: transparent;
 }
 

@@ -28,17 +28,25 @@
     .navbar-brand {
       padding: 0;
       line-height: 0;
+      flex: 0 0 auto;
     }
 
     .navbar-brand img {
-      width: 112px;
+      display: block;
+      width: clamp(72px, 9vw, 112px);
+      max-width: 100%;
       height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
       background: transparent;
     }
 
     footer img {
-      width: 140px;
+      width: clamp(90px, 12vw, 140px);
+      max-width: 100%;
       height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
       background: transparent;
     }
 
@@ -126,7 +134,7 @@
     <nav class="navbar wide bg-dark inverse-text navbar-expand-lg">
       <div class="container-fluid flex-row justify-content-center">
         <div class="navbar-header">
-          <div class="navbar-brand"><a href="index2.html"><img src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" /></a></div>
+          <div class="navbar-brand"><a href="index2.html"><img class="img-fluid" src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" /></a></div>
           <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
         </div>
         <!-- /.navbar-header -->
@@ -614,7 +622,7 @@
           </div>
           <!--/column -->
           <div class="col-md-4 text-center">
-            <img src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" />
+            <img class="uzo-footer-logo img-fluid" src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" />
           </div>
           <!--/column -->
           <div class="col-md-4 text-center text-md-right">

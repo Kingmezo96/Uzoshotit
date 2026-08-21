@@ -103,7 +103,9 @@
       overflow: hidden;
       aspect-ratio: 16 / 6;
       min-height: 0 !important;
-      background: #111 !important;
+      background: rgba(255, 255, 255, .045) !important;
+      border: 1px solid rgba(255, 255, 255, .1);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .035);
     }
 
     .cbp-image-wrapper:after {
@@ -114,23 +116,12 @@
       display: none !important;
     }
 
-    .uzo-tile-video {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity .45s ease;
-    }
-
-    .cbp-image-wrapper.is-video-loaded .uzo-tile-video {
-      opacity: 1;
-    }
   </style>
 </head>
 <body class="uzo-dark">
+  <video class="uzo-site-video-bg" autoplay muted loop playsinline preload="metadata" poster="style/media/uzo-background-poster.jpg" aria-hidden="true">
+    <source src="style/media/uzo-background.mp4" type="video/mp4">
+  </video>
   <div class="content-wrapper">
     <nav class="navbar wide bg-dark inverse-text navbar-expand-lg">
       <div class="container-fluid flex-row justify-content-center">
@@ -659,88 +650,5 @@
   <script src="style/revolution/js/extensions/revolution.extension.video.min.js"></script>
   <script src="style/js/plugins.js"></script>
   <script src="style/js/scripts.js"></script>
-  <script>
-    (function () {
-      var panels = document.querySelectorAll(".cbp-image-wrapper");
-      var hasObserver = "IntersectionObserver" in window;
-
-      function twoDigits(number) {
-        return String(number).padStart(2, "0");
-      }
-
-      function loadVideo(video) {
-        if (video.dataset.loaded === "true") {
-          return;
-        }
-
-        var source = document.createElement("source");
-        source.src = video.dataset.src;
-        source.type = "video/mp4";
-        video.appendChild(source);
-        video.dataset.loaded = "true";
-        video.load();
-      }
-
-      panels.forEach(function (panel, index) {
-        var panelNumber = Number(panel.dataset.videoPanel || index + 1);
-        var tileNumber = twoDigits(panelNumber);
-        var videoSrc = "style/media/tiles/uzo-tile-" + tileNumber + ".mp4";
-        var posterSrc = "style/media/posters/uzo-tile-" + tileNumber + "-poster.jpg";
-        panel.removeAttribute("data-image-src");
-        panel.style.backgroundImage = "url('" + posterSrc + "')";
-        panel.style.backgroundSize = "cover";
-        panel.style.backgroundPosition = "center";
-
-        var video = document.createElement("video");
-
-        video.className = "uzo-tile-video";
-        video.muted = true;
-        video.playsInline = true;
-        video.loop = true;
-        video.preload = "none";
-        video.poster = posterSrc;
-        video.setAttribute("aria-hidden", "true");
-        video.dataset.src = videoSrc;
-
-        video.addEventListener("canplay", function () {
-          panel.classList.add("is-video-loaded");
-          video.play().catch(function () {});
-        });
-
-        panel.insertBefore(video, panel.firstChild);
-
-        if (!hasObserver) {
-          loadVideo(video);
-          video.play().catch(function () {});
-        }
-      });
-
-      if (hasObserver) {
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            var video = entry.target.querySelector(".uzo-tile-video");
-
-            if (!video) {
-              return;
-            }
-
-            if (entry.isIntersecting) {
-              loadVideo(video);
-              video.play().catch(function () {});
-            } else {
-              video.pause();
-            }
-          });
-        }, {
-          rootMargin: "200px 0px",
-          threshold: .15
-        });
-
-        panels.forEach(function (panel) {
-          observer.observe(panel);
-        });
-      }
-    }());
-  </script>
 </body>
 </html>

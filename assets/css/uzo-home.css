@@ -1,0 +1,242 @@
+/* Uzo Shot It custom layer — keeps the Flèn template behavior intact. */
+
+:root {
+    --uzo-black: #050505;
+    --uzo-soft-black: #0b0b0b;
+    --uzo-cream: #f4efe7;
+    --uzo-gold: #d7b47a;
+    --uzo-muted: rgba(255, 255, 255, .66);
+}
+
+body {
+    background: var(--uzo-black);
+}
+
+header.type-2 {
+    background: linear-gradient(180deg, rgba(5, 5, 5, .78), rgba(5, 5, 5, .18), transparent);
+}
+
+header .logo.uzo-logo {
+    display: inline-flex;
+    align-items: center;
+    width: clamp(74px, 8vw, 112px);
+    max-width: 100%;
+    height: auto;
+}
+
+header .logo.uzo-logo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: transparent;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, .5));
+}
+
+header.type-2 nav ul li a {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(11px, .85vw, 13px);
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.overlay-menu .overlay-wrap .left-area nav li a {
+    letter-spacing: -.03em;
+}
+
+.perspective-slider .slide .slider-content h1 {
+    color: var(--uzo-cream);
+    letter-spacing: -.04em;
+    text-shadow: 0 12px 46px rgba(0, 0, 0, .55);
+    font-size: clamp(72px, 8.5vw, 150px);
+    line-height: .82;
+}
+
+.perspective-slider .slide .slider-content .category,
+.subheading,
+.scroll-to-explore span,
+.slide-number-wrap {
+    color: var(--uzo-gold);
+}
+
+.perspective-slider .slide .slider-content .category {
+    font-size: clamp(12px, 1.15vw, 18px);
+    letter-spacing: .08em;
+}
+
+.perspective-slider .slide .image:before,
+.perspective-slider .slide .video-wrapper:before {
+    background: rgba(0, 0, 0, .22);
+}
+
+.perspective-slider .slide .image:after,
+.perspective-slider .slide .video-wrapper:after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .42));
+}
+
+.video-wrapper video {
+    object-fit: cover;
+}
+
+.about-flen,
+.about-flen-three,
+.services-1,
+.clients,
+.news-type-1,
+footer {
+    background: var(--uzo-black);
+}
+
+.about-flen p,
+.about-flen-three p,
+.services-1 p,
+.news-type-1 p,
+footer p {
+    color: var(--uzo-muted);
+}
+
+.services-1 .accordion-title,
+.news-wrapper .news-item {
+    border-color: rgba(255, 255, 255, .12);
+}
+
+.uzo-film-holder {
+    min-height: 150px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, .14);
+    background:
+        linear-gradient(135deg, rgba(215, 180, 122, .12), rgba(255, 255, 255, .02)),
+        var(--uzo-soft-black);
+}
+
+.uzo-film-holder span {
+    color: var(--uzo-gold);
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    letter-spacing: .24em;
+}
+
+.uzo-film-holder strong {
+    color: var(--uzo-cream);
+    font-family: 'Butler', serif;
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 400;
+    line-height: .95;
+}
+
+.flen-btn {
+    border-color: rgba(215, 180, 122, .55);
+}
+
+.flen-btn span,
+.flen-btn i {
+    color: var(--uzo-cream);
+}
+
+.uzo-pricing-hero .title {
+    max-width: 1040px;
+    color: var(--uzo-cream);
+}
+
+.uzo-service-intro h6,
+.uzo-package-section h4,
+.uzo-addons-section h4,
+.uzo-booking-note h4 {
+    color: var(--uzo-cream);
+}
+
+.uzo-price-card,
+.uzo-addon-card,
+.uzo-booking-note {
+    border: 1px solid rgba(255, 255, 255, .14);
+    background:
+        linear-gradient(135deg, rgba(215, 180, 122, .13), rgba(255, 255, 255, .025)),
+        var(--uzo-soft-black);
+}
+
+.uzo-price-card {
+    padding: clamp(32px, 5vw, 64px);
+}
+
+.uzo-price-card strong {
+    display: block;
+    margin: 18px 0 14px;
+    color: var(--uzo-cream);
+    font-family: 'Butler', serif;
+    font-size: clamp(56px, 7vw, 112px);
+    font-weight: 400;
+    line-height: .86;
+    letter-spacing: -.05em;
+}
+
+.uzo-package-section .accordion-title .text-anime {
+    color: var(--uzo-cream);
+}
+
+.uzo-addons-section .row {
+    row-gap: 24px;
+}
+
+.uzo-addon-card {
+    min-height: 280px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.uzo-addon-card span {
+    color: var(--uzo-gold);
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    letter-spacing: .24em;
+}
+
+.uzo-addon-card h6 {
+    margin: 38px 0 14px;
+    color: var(--uzo-cream);
+    font-size: clamp(28px, 3.4vw, 48px);
+    line-height: .92;
+}
+
+.uzo-addon-card strong {
+    display: block;
+    color: var(--uzo-gold);
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    letter-spacing: .04em;
+}
+
+.uzo-booking-note {
+    padding: clamp(36px, 6vw, 76px);
+}
+
+.uzo-booking-note p {
+    color: var(--uzo-muted);
+}
+
+@media (max-width: 1199px) {
+    header .logo.uzo-logo {
+        width: clamp(68px, 15vw, 92px);
+    }
+}
+
+@media (max-width: 767px) {
+    .perspective-slider .slide .slider-content h1 {
+        font-size: clamp(42px, 15vw, 74px);
+    }
+
+    .uzo-film-holder {
+        min-height: 130px;
+        padding: 22px;
+    }
+
+    .uzo-addon-card {
+        min-height: 230px;
+        padding: 24px;
+    }
+}

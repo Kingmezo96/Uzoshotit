@@ -1,121 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="style/images/favicon.png">
-  <title>Book Now | Uzo Shot It</title>
-  <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style/css/plugins.css">
-  <link rel="stylesheet" type="text/css" href="style/type/icons.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="style/css/color/lavender.css">
-  <link rel="stylesheet" type="text/css" href="style/css/uzo-dark.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flen - Agency & Portfolio Template</title>
+
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="assets/fonts/Butler_Stencil_Webfont/stylesheet.css">
+    <link rel="stylesheet" href="assets/fonts/the_secret/stylesheet.css">
+    <link rel="stylesheet" href="assets/fonts/Butler_Webfont/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="assets/icon-fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/icon-fonts/remixicon/remixicon.css"> 
+
 </head>
-<body class="uzo-dark">
-  <video class="uzo-site-video-bg" autoplay muted loop playsinline preload="metadata" poster="style/media/uzo-background-poster.jpg" aria-hidden="true">
-    <source src="style/media/uzo-background.mp4" type="video/mp4">
-  </video>
-  <div class="content-wrapper uzo-page">
-    <nav class="navbar wide bg-dark inverse-text navbar-expand-lg">
-      <div class="container-fluid flex-row justify-content-center">
-        <div class="navbar-header">
-          <div class="navbar-brand"><a href="index2.html"><img class="img-fluid" src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" /></a></div>
-          <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
-        </div>
-        <div class="navbar-collapse collapse justify-content-between align-items-center">
-          <ul class="uzo-header-nav">
-            <li><a href="index2.html#cube-inline">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="academy.html">Academy</a></li>
-            <li><a class="book-link active" href="contact.html">Book Now</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <section class="uzo-hero">
-      <div class="container">
-        <p class="uzo-eyebrow">Book Uzo Shot It</p>
-        <h1 class="uzo-title">Let’s make the visuals feel expensive.</h1>
-        <p class="uzo-subtitle mt-25">Tell us what you are creating: brand film, event coverage, music video, short-form campaign, or training content.</p>
-      </div>
-    </section>
 
-    <section class="uzo-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 mb-30">
-            <div class="uzo-card">
-              <span class="uzo-pill">Starting packages</span>
-              <h3>Simple pricing guide</h3>
-              <p class="uzo-muted mb-20">Final quotes depend on location, crew, edit length, and delivery timeline.</p>
-              <p><strong>Content Session</strong><br><span class="uzo-muted">From $350 · reels, portraits, short promos</span></p>
-              <p><strong>Event Coverage</strong><br><span class="uzo-muted">From $750 · highlights and recap edits</span></p>
-              <p><strong>Brand Film</strong><br><span class="uzo-muted">From $1,500 · concept, shoot, edit, color</span></p>
+<body class="smooth-scroll">
+
+    <div id="preloader" class="preloader">
+        <div class="percentage">0%</div>
+        <div class="progress"></div>
+    </div>
+    
+    <div class="tavonline-overlay"></div>
+    
+    
+    <div id="cursor">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="ri-arrow-right-up-line"></i>
+        <div class="cursor__bg"></div>
+    </div>
+
+    <div id="content-scroll" data-scrollbar>
+        <div class="site-wrap" data-barba="wrapper">
+        <main  data-barba="container">
+
+
+        <!-- HEADER
+        ============================================= -->	
+        <header>
+            <div class="header-container">
+                <div class="row px-0 gx-0">
+                    <div class="col-xl-2 col-md-6 col-6">
+                        <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="logo"></a>
+                    </div>
+                    <div class="col-xl-10 col-md-6 col-6">
+                        <div class="burger-menu">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-7">
-            <form class="uzo-card" action="#" method="post">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Full name" required></div>
+        </header>
+        
+            <!-- OVERLAY MENU -->
+            <div class="overlay-menu">
+                <div class="close">
+                    <i class="ri-close-line"></i>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email address" required></div>
+                <div class="row overlay-wrap">
+                    <div class="col-xl-8 col-md-7 left-area">
+                        <nav>
+                            <ul>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Home</a>
+                                    <ul class="sub">
+                                        <li><a href="index.html">Creative Agency</a></li>
+                                        <li><a href="corporate.html">Corporate</a></li>
+                                        <li><a href="creative-portfolio.html">Creative Portfolio</a></li>
+                                        <li><a href="freelancer.html">Freelancer</a></li>
+                                        <li><a href="photographer.html">Photographer</a></li>
+                                        <li><a href="projects-grid.html">Creative Grid</a></li>
+                                        <li><a href="classic-menu.html">Classic Menu</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Portfolio</a>
+                                    <ul class="sub">
+                                        <li><a href="roll-showcase.html">Roll Showcase</a></li>
+                                        <li><a href="cross-showcase.html">Cross Showcase</a></li>
+                                        <li><a href="fullscreen-showcase.html">Fulllscreen Showcase</a></li>
+                                        <li><a href="letterflow-showcase.html">Letter Showcase</a></li>
+                                        <li><a href="half-showcase.html">Half Showcase</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li class="menu-item-has-children"><a href="#">Journal</a>
+                                    <ul class="sub">
+                                        <li><a href="news-classic.html">Journal Classic</a></li>
+                                        <li><a href="news-list.html">Journal List</a></li>
+                                    </ul>
+                                </li>
+                                <li class="current-menu-item"><a href="contact.html">Contact</a></li>
+                            </ul> 
+                        </nav> 
+                    </div>
+                    <div class="col-xl-4 col-md-5 right-area">
+                        <ul>
+                            <li><span class="title">Brief us</span></li>
+                            <li><a href="mailto:hello@flencreative.com" target="_blank">hello@flencreative.com</a></li>
+                            <li><a href="tel:34937606800" target="_blank">Tel. +34 937 606 800</a></li>
+                        </ul>
+                        <ul>
+                            <li><span class="title">Our Office</span></li>
+                            <li><p>1788 Morningview Lane, 10013<br> New York</p></li>
+                        </ul>
+                        <ul>
+                            <li><span class="title">Follow us</span></li>
+                            <li>
+                                <ul class="social-links">
+                                    <li><a href="#" target="_blank">Behance</a></li>
+                                    <li><a href="#" target="_blank">Dribbble</a></li>
+                                    <li><a href="#" target="_blank">Instagram</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group"><input class="form-control" type="tel" name="phone" placeholder="Phone number"></div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select class="form-control" name="service">
-                      <option value="">What do you need?</option>
-                      <option>Content Session</option>
-                      <option>Event Coverage</option>
-                      <option>Brand Film</option>
-                      <option>Academy / Training</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-group"><textarea class="form-control" name="message" placeholder="Project date, location, budget range, and what you want the final video to feel like."></textarea></div>
-                  <button class="btn uzo-btn" type="submit">Send Booking Request</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+            </div>
 
-    <footer class="dark-wrapper inverse-text">
-      <div class="container inner">
-        <div class="row d-md-flex align-items-md-center">
-          <div class="col-md-4 text-center text-md-left">
-            <p class="mb-0">© 2026 Uzo Shot It. All rights reserved.</p>
-          </div>
-          <div class="col-md-4 text-center">
-            <img class="uzo-footer-logo img-fluid" src="style/images/uzo-shot-it-logo-transparent.png" alt="Uzo Shot It" />
-          </div>
-          <div class="col-md-4 text-center text-md-right">
-            <ul class="social social-mute social-s mt-10">
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
+            <!-- CONTACT 
+            ============================================= -->	
+            <div class="page-caption">
+                <canvas class="scene scene--full" id="scene"></canvas>
+                <div class="spacer-300 spacer-md-200"></div>
+                <div class="container">
+                    <h2 class="title text-anime">Get In Touch</h2>
+                    <div class="spacer-90 spacer-sm-60"></div>
+                    <div class="row">
+                        <div class="col-md-5 left-area">
+                            <h6 class="text-anime">Got A Project Or<br>
+                                A Partnership In Mind?</h6>
+                        </div>
+        
+                        <div class="col-md-5 offset-md-2">
+                            <p class="text-anime right-area"> Partnering with Flen means gaining access to a wealth of knowledge, creativity, and expertise. We value open communication and strive to build strong, long-lasting relationships with our clients and partners. Your success is our top priority.                   </p>
+                            <div class="spacer-90 spacer-md-60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div id="map" class="map map-anime"></div>	
+
+            <!-- Contact Info -->
+            <div class="spacer-90"></div>
+            <div class="container">
+                <div class="contact-informations">
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <h6>Our office</h6>
+                            <span class="info-text">1444 S. Alameda Street Los Angeles,<br>
+                                California 90021</span>
+                                <div class="spacer-60"></div>
+                                <h6>Call us</h6>
+                                <a class="info-text" href="#">+123 456 789</a>
+                                <a class="info-text" href="#">+987 654 3210</a>
+                                <div class="spacer-60"></div>
+                               <h6>Send email</h6>
+                                <a class="info-text" href="#">hi@flenagency.com</a>
+                                <a class="info-text" href="#">sales@flenagency.com</a>
+                        </div>
+                        <div class="col-md-7 offset-md-1 col-11">
+                            <h6>Or fill the form below</h6>
+                            <div class="spacer-45"></div>
+                            <form name="contactform"  id="contactform" class="row" autocomplete="off">
+                                <!-- name -->
+                                <div class="col-xl-12 mb-3">
+                                  <input type="text" style="display:none" />
+                                  <input class="contact-bar" name="name" type="text" placeholder="Name" id="name" >
+                                </div>
+                                <!-- email -->
+                                <div class="col-xl-12 mb-3">
+                                  <input class=" contact-bar" name="email" type="text"  placeholder="Email" id="email"  >
+                              </div>
+                              <!-- company -->
+                              <div class="col-xl-12 mb-3">
+                                <input class=" contact-bar" name="company" type="text"  placeholder="Company" id="company"  >
+                            </div>
+                                <!-- about project -->
+                                <div class="col-xl-12 mb-4">
+                                    <textarea class=" contact-bar" name="comments" id="comments" rows="3" placeholder="Tell me about your project"></textarea>
+                                </div>
+                                <!-- button -->
+                                <div class="col-xl-12">
+                                  <input class="form-btn" type="submit" value="SEND IT">
+                                </div>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+
+
+            <div class="spacer-150 spacer-md-60 spacer-sm-60"></div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-12">
+                            <h3>Let’s create something<br> great together!</h3>
+                        </div>
+                        <div class="col-md-4 col-12 align-right button-wrapper">
+                            <a href="#" class="flen-btn"><span data-hover="hello@flenagency.com">hello@flenagency.com</span></a>
+                        </div>
+                    </div>
+                    <div class="spacer-30"></div>
+                    <div class="row bottom-wrapper">
+                            <div class="col-xl-4 col-md-12">
+                                <p class="little">Copyright © 2023 Tavonline</p>
+                            </div>
+                            <div class="col-xl-8 col-md-12 social-links">
+                                <a href="#">Facebook</a>
+                                <a href="#">Behance</a>
+                                <a href="#">Dribbble</a>
+                                <a href="#">Instagram</a>
+                            </div>
+                    </div>
+                </div>
+            </footer>
+
+            </main>
         </div>
-      </div>
-    </footer>
-  </div>
-  <script src="style/js/jquery.min.js"></script>
-  <script src="style/js/popper.min.js"></script>
-  <script src="style/js/bootstrap.min.js"></script>
-  <script src="style/js/plugins.js"></script>
-  <script src="style/js/scripts.js"></script>
+    </div>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/webgl.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44qiQKRvAB1ETh4F1oQcSs9PIfLPbCQE&sensor=false"></script>
+    <script src="assets/js/map.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    
 </body>
 </html>

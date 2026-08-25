@@ -1,0 +1,107 @@
+body, .preloader, main{
+    background: rgb(237, 237, 237);
+}
+
+.perspective-slider, .tavonline-overlay, .image-anime:after, .perspective-slider .slide .image:before, .video-anime:after, .perspective-slider .slide .video-wrapper:before, .perspective-slider .slide .image:after, .perspective-slider .slide .video-wrapper:after, .cross-slider, .freelancer-hero, .freelancer-services, .contact-bar, .work-hero-2, .overlay-menu .overlay-wrap .left-area{
+    background: rgb(237, 237, 237);
+}
+
+footer{
+    background: #fff;
+}
+
+.testimonial-slider .slider-arrows .progress span, .cross-nav .next::before, .cross-nav .prev::after, .flen-btn{
+    background: #000;
+}
+
+.testimonial-slider .slider-arrows .progress {
+    background: #cecece;
+}
+
+a, .slide-numbers span, .freelancer-hero .hi, .preloader .percentage, .work-hero-2 .category, .work-categories span, .slide-number-wrap .total-slide, h1, h2, h3, h4, h5, h6, .subheading, p, .about-flen p, .services-1 .accordion-title, .agency-counter .counter .count-number, .agency-counter .counter .plus, .agency-counter .counter .counter-title, .cross-slider-captions .word-group span, .scroll-to-explore span, .awards ul li, .about-flen-three .counter .count-number, .about-flen-three .counter .plus, .awards-two .awards-list ul li span, .freelancer-hero .title span, .roll.slider-content-holder .swiper-pagination-bullet .title h1, .teammate-1 .teammate-info span, .testimonial-slider .slider-arrows .number, .testimonial-slider:before, .testimonial-slider .author, .tags ul li a, .tags i, .work-hero ul.work-info li, .next-work span, .works-list li span:nth-child(1), .overlay-menu .right-area ul li span.title, .overlay-menu .close i, .overlay-menu .overlay-wrap .left-area nav li.menu-item-has-children > a:after, .cross-slider .scroll-to-explore i{
+    color: #000;
+}
+
+
+.services-1 .accordion hr, .about-flen-three .about-number hr, .awards-two .awards-list ul hr, .service-item hr{
+    opacity: .4;
+}
+
+.news-type-1 .news-item {
+    border-bottom: 1px solid #cdcdcd;
+}
+
+
+.about-flen-two, .about-freelancer, .overlay-menu .overlay-wrap .right-area, .freelancer-works-wrap, .freelancer-works-wrap .perspective-slider, .about-flen-two, .about-freelancer, .freelancer-works-wrap, .freelancer-works-wrap .perspective-slider, .freelancer-works-wrap .perspective-slider .slide .image:before, .freelancer-works-wrap .perspective-slider .slide .video-wrapper:before, .freelancer-works-wrap .perspective-slider .slide .image:after, .freelancer-works-wrap .perspective-slider .slide .video-wrapper:after{
+    background: #fff;
+}
+
+.accordion-holder .scroll-to-explore, .accordion-holder .scroll-to-explore span, .work-hero-4 .title, .work-hero-4 .scroll-to-explore span{
+    color: #fff;
+}
+
+.roll-slider-wrap:after{
+    display: none;
+}
+
+
+.contact-informations .info-text, blockquote p{
+    color: #000;
+}
+
+
+.clients .client:nth-child(1), .clients .client:nth-child(2) {
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.clients .client:nth-child(odd) {
+    border-right: 1px solid #cfcfcf;
+}
+
+.clients .client {
+    border-bottom: 1px solid #cfcfcf;
+}
+
+header.type-2 nav ul li .sub li a{
+    color: #fff;
+}
+
+.grey-bg{
+    background: #ededed;
+
+}
+
+header.type-2 .burger-menu span:after, header.type-2 .burger-menu span{
+    background: #000;
+}
+
+.clients.two .client {
+    border: 0;
+}
+
+header .logo img{
+    mix-blend-mode: difference;
+}
+
+header.type-2 nav ul li a{
+    color: #000;
+}
+
+header{
+    mix-blend-mode: difference;
+}
+
+header.type-2{
+    mix-blend-mode: normal;
+}
+
+
+.scene {
+    z-index: 0;
+    opacity: .3;
+    mix-blend-mode: difference;
+}
+
+.flen-btn span, .flen-btn span:after{
+    color: #fff;
+}

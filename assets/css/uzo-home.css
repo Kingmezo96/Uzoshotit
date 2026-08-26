@@ -116,6 +116,17 @@ header.type-2 nav ul li a {
     object-fit: cover;
 }
 
+.uzo-about-video {
+    overflow: hidden;
+}
+
+.uzo-about-video video {
+    display: block;
+    width: 100%;
+    min-height: clamp(360px, 56vw, 760px);
+    object-fit: cover;
+}
+
 .about-flen,
 .about-flen-three,
 .services-1,
@@ -136,6 +147,11 @@ footer p {
 .services-1 .accordion-title,
 .news-wrapper .news-item {
     border-color: rgba(255, 255, 255, .12);
+}
+
+.news-wrapper .news-image img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
 }
 
 .uzo-film-holder {

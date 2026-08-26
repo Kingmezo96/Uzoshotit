@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzo Shot It — Cinematic Wedding Films</title>
+    <title>Uzo Academy — Uzo Shot It</title>
 
 
     <!-- Fonts  -->
@@ -60,11 +60,11 @@
                     <div class="col-xl-10 col-md-6 col-6">
                         <nav>
                             <ul>
-                                <li class="current-menu-item"><a href="classic-menu.html">Home</a></li>
+                                <li><a href="classic-menu.html">Home</a></li>
                                 <li><a href="#target">About</a></li>
                                 <li><a href="services.html">Services</a></li>
                                 <li><a href="#films">Films</a></li>
-                                <li><a href="academy.html">Academy</a></li>
+                                <li class="current-menu-item"><a href="academy.html">Academy</a></li>
                                 <li><a href="contact.html">Book Now</a></li>
                             </ul> 
                         </nav> 
@@ -86,11 +86,11 @@
                     <div class="col-xl-8 col-md-7 left-area">
                         <nav>
                             <ul>
-                                <li class="current-menu-item"><a href="classic-menu.html">Home</a></li>
+                                <li><a href="classic-menu.html">Home</a></li>
                                 <li><a href="#target">About</a></li>
                                 <li><a href="services.html">Services</a></li>
                                 <li><a href="#films">Films</a></li>
-                                <li><a href="academy.html">Academy</a></li>
+                                <li class="current-menu-item"><a href="academy.html">Academy</a></li>
                                 <li><a href="contact.html">Book Now</a></li>
                             </ul> 
                         </nav> 
@@ -489,6 +489,16 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44qiQKRvAB1ETh4F1oQcSs9PIfLPbCQE&sensor=false"></script>
     <script src="assets/js/map.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            var academy = document.getElementById('academy');
+            if (academy) {
+                setTimeout(function () {
+                    academy.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 600);
+            }
+        });
+    </script>
 
 
     

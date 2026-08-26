@@ -22,6 +22,7 @@ header .logo.uzo-logo {
     width: clamp(74px, 8vw, 112px);
     max-width: 100%;
     height: auto;
+    transform: translateY(-8px);
 }
 
 header .logo.uzo-logo img {
@@ -51,6 +52,8 @@ header.type-2 nav ul li a {
     text-shadow: 0 12px 46px rgba(0, 0, 0, .55);
     font-size: clamp(58px, 7.2vw, 118px);
     line-height: .82;
+    margin-top: 4px;
+    margin-bottom: 0;
 }
 
 .perspective-slider .slide .slider-content .category,
@@ -61,8 +64,43 @@ header.type-2 nav ul li a {
 }
 
 .perspective-slider .slide .slider-content .category {
+    display: inline-block;
     font-size: clamp(11px, .9vw, 14px);
     letter-spacing: .07em;
+    margin-bottom: 4px;
+}
+
+.perspective-slider .slide .slider-content p {
+    max-width: min(620px, 78vw);
+    margin: 10px auto 0;
+    color: rgba(244, 239, 231, .82);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.08vw, 17px);
+    line-height: 1.35;
+    letter-spacing: .02em;
+    text-shadow: 0 8px 30px rgba(0, 0, 0, .55);
+}
+
+.perspective-slider .slide .slider-content .uzo-long-title,
+.perspective-slider .slide .slider-content .uzo-typewriter {
+    max-width: min(980px, 82vw);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(40px, 5.4vw, 86px);
+    line-height: .96;
+    letter-spacing: -.035em;
+}
+
+.perspective-slider .slide .slider-content .uzo-typewriter {
+    display: block;
+    overflow: hidden;
+    animation: uzoTyping 5.8s steps(44, end) infinite;
+}
+
+@keyframes uzoTyping {
+    0%, 10% { clip-path: inset(0 100% 0 0); }
+    58%, 84% { clip-path: inset(0 0 0 0); }
+    100% { clip-path: inset(0 100% 0 0); }
 }
 
 .perspective-slider .slide .image:before,
@@ -102,15 +140,17 @@ footer p {
 }
 
 .uzo-film-holder {
-    min-height: 150px;
-    padding: 28px;
+    min-height: 142px;
+    padding: clamp(18px, 2.4vw, 28px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 12px;
     border: 1px solid rgba(255, 255, 255, .14);
     background:
         linear-gradient(135deg, rgba(215, 180, 122, .12), rgba(255, 255, 255, .02)),
         var(--uzo-soft-black);
+    overflow: hidden;
 }
 
 .uzo-film-holder span {
@@ -123,9 +163,19 @@ footer p {
 .uzo-film-holder strong {
     color: var(--uzo-cream);
     font-family: 'Butler', serif;
-    font-size: clamp(26px, 3vw, 42px);
+    font-size: clamp(24px, 2.65vw, 38px);
     font-weight: 400;
-    line-height: .95;
+    line-height: .92;
+}
+
+.uzo-film-holder small {
+    display: block;
+    max-width: 14em;
+    color: rgba(244, 239, 231, .6);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(11px, .95vw, 13px);
+    line-height: 1.25;
+    letter-spacing: .03em;
 }
 
 .flen-btn {
@@ -222,6 +272,7 @@ footer p {
 @media (max-width: 1199px) {
     header .logo.uzo-logo {
         width: clamp(68px, 15vw, 92px);
+        transform: translateY(-5px);
     }
 }
 
@@ -230,9 +281,39 @@ footer p {
         font-size: clamp(36px, 12vw, 58px);
     }
 
+    .perspective-slider .slide .slider-content .uzo-long-title,
+    .perspective-slider .slide .slider-content .uzo-typewriter {
+        max-width: 86vw;
+        font-size: clamp(30px, 9vw, 46px);
+        line-height: 1.02;
+    }
+
+    .perspective-slider .slide .slider-content .uzo-typewriter {
+        animation: uzoTyping 5.8s steps(36, end) infinite;
+    }
+
+    .perspective-slider .slide .slider-content p {
+        max-width: 82vw;
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
     .uzo-film-holder {
-        min-height: 130px;
-        padding: 22px;
+        min-height: 118px;
+        padding: 18px;
+        gap: 8px;
+    }
+
+    .uzo-film-holder span {
+        font-size: 10px;
+    }
+
+    .uzo-film-holder strong {
+        font-size: clamp(22px, 8vw, 32px);
+    }
+
+    .uzo-film-holder small {
+        font-size: 11px;
     }
 
     .uzo-addon-card {

@@ -265,12 +265,46 @@ footer p {
 }
 
 .flen-btn {
-    border-color: rgba(215, 180, 122, .55);
+    border: 1px solid rgba(215, 180, 122, .85);
+    background: var(--uzo-gold);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, .26);
 }
 
 .flen-btn span,
+.flen-btn span:after,
 .flen-btn i {
-    color: var(--uzo-cream);
+    color: #111;
+}
+
+.flen-btn:hover {
+    background: var(--uzo-cream);
+    border-color: var(--uzo-cream);
+}
+
+.flen-btn:hover span,
+.flen-btn:hover span:after,
+.flen-btn:hover i {
+    color: #111;
+}
+
+.form-btn {
+    border: 1px solid rgba(215, 180, 122, .72);
+    border-radius: 999px;
+    background: var(--uzo-gold);
+    color: #111;
+    font-weight: 800;
+    letter-spacing: .08em;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .28);
+    transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.form-btn:hover,
+.form-btn:focus {
+    border-color: var(--uzo-cream);
+    background: var(--uzo-cream);
+    color: #111;
+    transform: translateY(-2px);
+    outline: none;
 }
 
 .uzo-pricing-hero .title {

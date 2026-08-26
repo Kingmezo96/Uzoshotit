@@ -144,6 +144,34 @@ footer p {
     color: var(--uzo-muted);
 }
 
+.uzo-about-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.uzo-about-socials a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid rgba(215, 180, 122, .28);
+    border-radius: 999px;
+    color: var(--uzo-cream);
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, .035);
+}
+
+.uzo-about-socials a:hover {
+    border-color: rgba(215, 180, 122, .75);
+    color: var(--uzo-gold);
+}
+
 .services-1 .accordion-title,
 .news-wrapper .news-item {
     border-color: rgba(255, 255, 255, .12);

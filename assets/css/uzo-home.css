@@ -3,9 +3,9 @@
 :root {
     --uzo-black: #050505;
     --uzo-soft-black: #0b0b0b;
-    --uzo-cream: #f4efe7;
-    --uzo-gold: #d7b47a;
-    --uzo-muted: rgba(255, 255, 255, .66);
+    --uzo-cream: #ffffff;
+    --uzo-gold: #ffffff;
+    --uzo-muted: rgba(255, 255, 255, .68);
 }
 
 body {
@@ -156,7 +156,7 @@ footer p {
     align-items: center;
     min-height: 42px;
     padding: 0 18px;
-    border: 1px solid rgba(215, 180, 122, .28);
+    border: 1px solid rgba(255, 255, 255, .22);
     border-radius: 999px;
     color: var(--uzo-cream);
     font-family: 'Outfit', sans-serif;
@@ -168,7 +168,7 @@ footer p {
 }
 
 .uzo-about-socials a:hover {
-    border-color: rgba(215, 180, 122, .75);
+    border-color: rgba(255, 255, 255, .7);
     color: var(--uzo-gold);
 }
 
@@ -192,7 +192,7 @@ footer p {
     gap: 14px;
     border: 1px solid rgba(255, 255, 255, .14);
     background:
-        linear-gradient(135deg, rgba(215, 180, 122, .12), rgba(255, 255, 255, .02)),
+        linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02)),
         var(--uzo-soft-black);
     overflow: hidden;
     text-align: center;
@@ -265,8 +265,9 @@ footer p {
 }
 
 .flen-btn {
-    border: 1px solid rgba(215, 180, 122, .85);
-    background: var(--uzo-gold);
+    top: 0;
+    border: 1px solid rgba(255, 255, 255, .9);
+    background: #fff;
     box-shadow: 0 16px 38px rgba(0, 0, 0, .26);
 }
 
@@ -277,20 +278,20 @@ footer p {
 }
 
 .flen-btn:hover {
-    background: var(--uzo-cream);
-    border-color: var(--uzo-cream);
+    background: #050505;
+    border-color: #fff;
 }
 
 .flen-btn:hover span,
 .flen-btn:hover span:after,
 .flen-btn:hover i {
-    color: #111;
+    color: #fff;
 }
 
 .form-btn {
-    border: 1px solid rgba(215, 180, 122, .72);
+    border: 1px solid rgba(255, 255, 255, .85);
     border-radius: 999px;
-    background: var(--uzo-gold);
+    background: #fff;
     color: #111;
     font-weight: 800;
     letter-spacing: .08em;
@@ -300,9 +301,9 @@ footer p {
 
 .form-btn:hover,
 .form-btn:focus {
-    border-color: var(--uzo-cream);
-    background: var(--uzo-cream);
-    color: #111;
+    border-color: #fff;
+    background: #050505;
+    color: #fff;
     transform: translateY(-2px);
     outline: none;
 }
@@ -324,19 +325,19 @@ footer p {
 .uzo-booking-note {
     border: 1px solid rgba(255, 255, 255, .14);
     background:
-        linear-gradient(135deg, rgba(215, 180, 122, .13), rgba(255, 255, 255, .025)),
+        linear-gradient(135deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025)),
         var(--uzo-soft-black);
 }
 
 .uzo-price-card {
     position: relative;
     overflow: hidden;
-    padding: clamp(34px, 5vw, 72px);
-    border-color: rgba(215, 180, 122, .28);
+    width: 100%;
+    padding: clamp(30px, 4vw, 58px);
+    border-color: rgba(255, 255, 255, .22);
     border-radius: 2px;
     background:
-        radial-gradient(circle at 18% 18%, rgba(215, 180, 122, .18), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .015) 46%, rgba(215, 180, 122, .055)),
+        linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02) 46%, rgba(0, 0, 0, .42)),
         var(--uzo-soft-black);
     box-shadow: 0 32px 90px rgba(0, 0, 0, .38);
 }
@@ -356,7 +357,7 @@ footer p {
     align-items: center;
     gap: 14px;
     margin-bottom: 22px;
-    color: var(--uzo-gold);
+    color: rgba(255, 255, 255, .78);
     font-size: clamp(13px, 1.15vw, 18px);
 }
 
@@ -364,21 +365,38 @@ footer p {
     content: "";
     width: clamp(42px, 6vw, 86px);
     height: 1px;
-    background: rgba(215, 180, 122, .58);
+    background: rgba(255, 255, 255, .36);
 }
 
 .uzo-price-card strong {
     position: relative;
     z-index: 1;
     display: block;
-    margin: 0 0 24px;
+    margin: 0 0 10px;
     color: var(--uzo-cream);
     font-family: 'Butler', serif;
-    font-size: clamp(54px, 6.7vw, 104px);
+    font-size: clamp(46px, 5.4vw, 86px);
     font-weight: 400;
-    line-height: .9;
-    letter-spacing: -.045em;
-    text-wrap: nowrap;
+    line-height: .92;
+    letter-spacing: -.055em;
+    overflow-wrap: normal;
+}
+
+.uzo-price-usd {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: fit-content;
+    margin-bottom: 26px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 999px;
+    padding: 8px 14px;
+    color: rgba(255, 255, 255, .78);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(12px, .95vw, 14px);
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
 .uzo-price-card p {
@@ -401,7 +419,7 @@ footer p {
 }
 
 .uzo-price-includes span {
-    border: 1px solid rgba(215, 180, 122, .28);
+    border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 999px;
     padding: 8px 14px;
     color: rgba(244, 239, 231, .78);
@@ -418,10 +436,10 @@ footer p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(215, 180, 122, .72);
+    border: 1px solid rgba(255, 255, 255, .9);
     border-radius: 999px;
     padding: 13px 22px;
-    background: var(--uzo-gold);
+    background: #fff;
     color: #111;
     font-family: 'Outfit', sans-serif;
     font-size: 13px;
@@ -431,9 +449,9 @@ footer p {
 }
 
 .uzo-price-cta:hover {
-    border-color: var(--uzo-cream);
-    background: var(--uzo-cream);
-    color: #111;
+    border-color: #fff;
+    background: #050505;
+    color: #fff;
 }
 
 .uzo-package-section .accordion-title .text-anime {
@@ -447,8 +465,8 @@ footer p {
     aspect-ratio: 4 / 5;
     min-height: clamp(420px, 44vw, 660px);
     overflow: hidden;
-    border: 1px solid rgba(215, 180, 122, .24);
-    background: rgba(244, 239, 231, .08);
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, .08);
     box-shadow: 0 34px 90px rgba(0, 0, 0, .35);
 }
 
@@ -458,7 +476,7 @@ footer p {
     inset: 0;
     background:
         linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .22)),
-        radial-gradient(circle at 50% 20%, rgba(215, 180, 122, .08), transparent 40%);
+        radial-gradient(circle at 50% 20%, rgba(255, 255, 255, .06), transparent 40%);
     pointer-events: none;
 }
 
@@ -483,7 +501,7 @@ footer p {
 }
 
 .uzo-addon-card span {
-    color: var(--uzo-gold);
+    color: rgba(255, 255, 255, .72);
     font-family: 'Outfit', sans-serif;
     font-size: 12px;
     letter-spacing: .24em;
@@ -498,7 +516,7 @@ footer p {
 
 .uzo-addon-card strong {
     display: block;
-    color: var(--uzo-gold);
+    color: var(--uzo-cream);
     font-family: 'Outfit', sans-serif;
     font-size: 18px;
     letter-spacing: .04em;
@@ -529,7 +547,8 @@ footer p {
     }
 
     .uzo-price-card {
-        padding: 32px 24px;
+        max-width: 100%;
+        padding: 30px 22px;
     }
 
     .uzo-price-card:before {
@@ -537,8 +556,27 @@ footer p {
     }
 
     .uzo-price-card strong {
-        font-size: clamp(46px, 15vw, 72px);
+        font-size: clamp(40px, 12.8vw, 58px);
+        line-height: .94;
         white-space: normal;
+    }
+
+    .uzo-price-usd {
+        margin-bottom: 22px;
+    }
+
+    .uzo-price-cta,
+    .flen-btn {
+        width: 100%;
+        max-width: 320px;
+        min-height: 48px;
+        text-align: center;
+    }
+
+    footer .button-wrapper,
+    .button-wrapper {
+        margin-top: 24px;
+        text-align: left !important;
     }
 
     .perspective-slider .slide .slider-content h1 {

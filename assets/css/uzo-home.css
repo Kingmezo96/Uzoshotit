@@ -22,7 +22,7 @@ header .logo.uzo-logo {
     width: clamp(74px, 8vw, 112px);
     max-width: 100%;
     height: auto;
-    transform: translateY(-8px);
+    transform: translateY(-14px);
 }
 
 header .logo.uzo-logo img {
@@ -266,6 +266,9 @@ footer p {
 
 .flen-btn {
     top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid rgba(255, 255, 255, .9);
     background: #fff;
     box-shadow: 0 16px 38px rgba(0, 0, 0, .26);
@@ -277,9 +280,17 @@ footer p {
     color: #111;
 }
 
+.flen-btn span:after {
+    content: none;
+}
+
 .flen-btn:hover {
     background: #050505;
     border-color: #fff;
+}
+
+.flen-btn:hover span {
+    transform: none;
 }
 
 .flen-btn:hover span,
@@ -533,11 +544,24 @@ footer p {
 @media (max-width: 1199px) {
     header .logo.uzo-logo {
         width: clamp(68px, 15vw, 92px);
-        transform: translateY(-5px);
+        transform: translateY(-12px);
     }
 }
 
 @media (max-width: 767px) {
+    .header-container {
+        padding: 24px 24px 0;
+    }
+
+    header .logo.uzo-logo {
+        width: clamp(62px, 19vw, 82px);
+        transform: translateY(-10px);
+    }
+
+    header .burger-menu {
+        transform: translateY(0);
+    }
+
     .uzo-services-video {
         position: relative;
         top: auto;
@@ -573,10 +597,33 @@ footer p {
         text-align: center;
     }
 
+    .flen-btn span {
+        transform: none !important;
+    }
+
+    .flen-btn span:after {
+        display: none !important;
+    }
+
     footer .button-wrapper,
     .button-wrapper {
         margin-top: 24px;
         text-align: left !important;
+    }
+
+    .contact-informations .col-11,
+    .about-flen-three .col-11,
+    .about-flen-three .col-9 {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .about-flen-three .left-area,
+    .about-flen-three .right-area {
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
     .perspective-slider .slide .slider-content h1 {
